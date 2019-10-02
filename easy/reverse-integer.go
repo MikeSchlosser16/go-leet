@@ -29,6 +29,18 @@ func reverse(x int) int {
 // The mod also takes care of the negative, ie. -321 % 10 == -1
 // Time complexity: O(log(x))
 // Space complexity: O(1)
+
+// x = 123
+// mod = 123 % 10 = 3
+// x = 12
+// reverse = 0 * 10 + 3 = 3
+// mod = 12 % 10 = 2
+// x = 1
+// reverse = 3 * 10 + 2 = 32
+// mod = 1 % 10 = 1
+// x = 0
+// reverse = 32 * 10 + 1 = 321
+
 func reverse(x int) int {
     reverse := 0
     for x != 0 {
