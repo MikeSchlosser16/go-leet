@@ -38,3 +38,17 @@ func isValidWord(s string) bool {
     }
     return word && hasChar
 }
+
+
+
+
+
+
+// Simple to get most, but fails on "a " for example
+func lengthOfLastWord(s string) int {
+    words := strings.Split(s, " ")
+    if len(words) < 1{
+        return 0
+    }
+    return len(words[len(words)-1])
+}
