@@ -28,3 +28,28 @@ func countAndSay(n int) string {
     }
     return val
 }
+
+// Java
+class Solution {
+    public String countAndSay(int n) {
+        // validation
+        if (n <= 0){
+            return "";
+        }
+        String res = "1"; // Default return value to 1, must always start here
+        while(n > 1){ // Start at n, go back to one, which we know
+            StringBuilder cur = new StringBuilder(); // Cur holds the value of the current term
+            for (int i = 0; i < res.length(); ++i){  // Loop through the current steps result
+                int count = 1;
+                while(i + 1 < res.length() && res.charAt(i) == res.charAt(i+1)){ // Ensure we arent out of bouns and that this element is the same as the next. If they are the same, add to counter and increment i again
+                    ++count;
+                    ++i;
+                }
+                cur.append(count).append(res.charAt(i));
+            }
+            res = cur.toString();
+            --n;
+        }
+        return res;
+    }
+}
