@@ -32,3 +32,33 @@ func intToBinary(val int) string {
 	return v
 
 }
+
+
+
+
+// Java implementation
+class Solution {
+    public String addBinary(String a, String b) {
+        StringBuilder sb = new StringBuilder();
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+        int carry = 0;
+        while (i >= 0 || j >= 0){
+            int sum = carry;
+            if (i >= 0) {
+                sum += a.charAt(i--) - '0'; // convert to int
+            }
+            if (j >= 0){
+                sum += b.charAt(j--) - '0';
+            }
+
+            sb.insert(0, sum % 2); // sum can be 0,1,2
+            carry = sum / 2; // only get a val if sum is 2, else int division to 0
+        }
+        // Check if last sig digits need to account for carry
+        if (carry > 0){
+            sb.insert(0,1); // add the final one
+        }
+        return sb.toString();
+    }
+}
