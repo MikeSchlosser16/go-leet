@@ -24,7 +24,6 @@ func merge(nums1 []int, m int, nums2 []int, n int) []int {
         // append rest of n
          for k := j; k < n; k++{
             results = append(results, nums2[k])
-            fmt.Println("appended: ", nums1[k])
          }
     }
     return results
