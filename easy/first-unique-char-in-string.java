@@ -13,7 +13,6 @@ class Solution {
             if(unique){
                 return i;
             }
-
         }
         return -1;
 
